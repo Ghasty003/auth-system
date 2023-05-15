@@ -5,6 +5,6 @@ if (!isset($_GET['logout'])) {
     exit();
 }
 
-
+session_start();
 session_unset();
 header("Location: ../pages/login.php");
