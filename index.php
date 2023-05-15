@@ -1,9 +1,13 @@
 <?php
 
-if (!isset($_POST['signup-submit'])) {
-    header("Location: ./pages/signup.php");
+session_start();
+
+if (empty($_SESSION['username'])) {
+    header("Location: ./pages/login.php");
     exit();
 }
+
+$username = $_SESSION['username'];
 
 ?>
 
@@ -20,6 +24,7 @@ if (!isset($_POST['signup-submit'])) {
 
 <body>
     <h1>Dashboard.</h1>
+    <h2>Weclome, <?php echo $username ?></h2>
 </body>
 
 </html>
