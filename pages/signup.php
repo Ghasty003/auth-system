@@ -24,7 +24,7 @@
 <body>
     <h1>Weclome.</h1>
 
-    <form action="" method="post">
+    <form action="../config/signup.php" method="post">
         <input type="text" name="username" placeholder="username"> <br>
         <input type="email" name="email" placeholder="email"> <br>
         <input type="text" name="password" placeholder="password"> <br>
