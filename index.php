@@ -23,6 +23,9 @@ $username = $_SESSION['username'];
 </head>
 
 <body>
+    <form action="./config/logout.php" method="get">
+        <button name="logout">Logout</button>
+    </form>
     <h1>Dashboard.</h1>
     <h2>Weclome, <?php echo $username ?></h2>
 </body>
