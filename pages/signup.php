@@ -1,3 +1,15 @@
+<?php
+
+if (empty($_GET['error'])) {
+    echo "no one";
+} else {
+    print_r($_GET['error']);
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 

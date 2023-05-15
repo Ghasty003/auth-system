@@ -17,31 +17,31 @@ $password = $_POST['password'];
 
 if (empty($email)) {
     $errors['email'] = "Enter a valid emai address";
-    header("Location: ../pages/signup.php?error=$errors");
+    header("Location: ../pages/signup.php?error=" . $errors['email']);
     exit();
 }
 
 if (empty($username)) {
     $errors['username'] = "Enter username";
-    header("Location: ../pages/signup.php?error=$errors");
+    header("Location: ../pages/signup.php?error=" . $errors['username']);
     exit();
 }
 
 if (empty($password)) {
     $errors["password"] = "Enter password";
-    header("Location: ../pages/signup.php?error=$errors");
+    header("Location: ../pages/signup.php?error=" . $errors['password']);
     exit();
 }
 
 if (strlen($password) < 6) {
     $errors["password"] = "Password should be more than 6 characters";
-    header("Location: ../pages/signup.php?error=$errors");
+    header("Location: ../pages/signup.php?error=" . $errors['password']);
     exit();
 }
 
 if (strlen($username) < 2) {
     $errors["username"] = "Username should be atleast 2 characters";
-    header("Location: ../pages/signup.php?error=$errors");
+    header("Location: ../pages/signup.php?error=" . $errors['username']);
     exit();
 }
 
@@ -61,11 +61,11 @@ $result = mysqli_stmt_num_rows($stmt);
 
 if ($result > 0) {
     $errors['username'] = "Username is already taken";
-    header("Location: ../pages/signup.php?error=$errors");
+    header("Location: ../pages/signup.php?error=" . $errors['username']);
     exit();
 }
 
-$sql = "INSERT INTO users (email, username, u_password) VALUES (?, ?, ? )";
+$sql = "INSERT INTO users (email, username, password) VALUES (?, ?, ? )";
 $stmt = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmt, $sql)) {
