@@ -7,3 +7,4 @@ if (!isset($_GET['logout'])) {
 
 
 session_unset();
+header("Location: ../pages/login.php");
